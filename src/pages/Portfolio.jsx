@@ -2,26 +2,63 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
+import React from 'react';
 
 export default function Portfolio() {
+  const projects = [
+    {
+      title: 'Winning Edge - a Sports Betting & Odds Website',
+      imageUrl: 'project1.jpg',
+      deployedLink: 'https://pacific-shelf-77218-ba08c8175600.herokuapp.com/',
+      githubLink: 'https://github.com/adamboudruh/Group-1-Winning-Edge',
+    },
+    {
+      title: 'Food Fusion - A Recipe and Nutrition Helper',
+      imageUrl: 'project2.jpg',
+      deployedLink: 'https://somphangchanleuxay.github.io/FlavorFusion/',
+      githubLink: 'https://github.com/somphangchanleuxay/FlavorFusion',
+    },
+    {
+      title: 'Weather Tracker',
+      imageUrl: 'project2.jpg',
+      deployedLink: 'https://cbursch13.github.io/Weather-Tracker/',
+      githubLink: 'https://github.com/cbursch13/Weather-Tracker',
+    },
+    {
+      title: 'Personal Work Day Scheduler',
+      imageUrl: 'project2.jpg',
+      deployedLink: 'https://cbursch13.github.io/Personal-Work-Day-Scheduler/',
+      githubLink: 'https://github.com/cbursch13/Personal-Work-Day-Scheduler',
+    },
+    {
+      title: 'Note Taker',
+      imageUrl: 'project2.jpg',
+      deployedLink: 'https://camnote-taker-58d580522770.herokuapp.com/',
+      githubLink: 'https://github.com/cbursch13/Note-Taker',
+    },
+    {
+      title: 'Text Editor',
+      imageUrl: 'project2.jpg',
+      deployedLink: 'https://text-editor-i8rm.onrender.com',
+      githubLink: 'https://github.com/cbursch13/Text-Editor',
+    },
+  ];
+
   return (
     <div>
-      <h1>Portfolio</h1>
-      <p>
-        Donec a volutpat quam. Curabitur nec varius justo, sed rutrum ligula.
-        Curabitur pellentesque turpis sit amet eros iaculis, a mollis arcu
-        dictum. Ut vel ante eget massa ornare placerat. Etiam nisl orci, finibus
-        sodales volutpat et, hendrerit ut dolor. Suspendisse porta dictum nunc,
-        sed pretium risus rutrum eget. Nam consequat, ligula in faucibus
-        vestibulum, nisi justo laoreet risus, luctus luctus mi lacus sit amet
-        libero. Class aptent taciti sociosqu ad litora torquent per conubia
-        nostra, per inceptos himenaeos. Mauris pretium condimentum tellus eget
-        lobortis. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-        Donec placerat accumsan mi, ut congue neque placerat eu. Donec nec ipsum
-        in velit pellentesque vehicula sit amet at augue. Maecenas aliquam
-        bibendum congue. Pellentesque semper, lectus non ullamcorper iaculis,
-        est ligula suscipit velit, sed bibendum turpis dui in sapien.
-      </p>
+      <div className="projects">
+        {projects.map((project, index) => (
+          <div key={index} className="project">
+            <h3>{project.title}</h3>
+            <img src={project.imageUrl} alt={project.title} />
+            <div className="links">
+              <a href={project.deployedLink} target="_blank" rel="noopener noreferrer">Deployed Application</a>
+              <a href={project.githubLink} target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
+
