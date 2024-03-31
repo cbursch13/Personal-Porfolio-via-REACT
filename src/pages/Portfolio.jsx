@@ -1,7 +1,12 @@
-export default function Blog() {
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+
+export default function Portfolio() {
   return (
     <div>
-      <h1>Blog Page</h1>
+      <h1>Portfolio</h1>
       <p>
         Donec a volutpat quam. Curabitur nec varius justo, sed rutrum ligula.
         Curabitur pellentesque turpis sit amet eros iaculis, a mollis arcu
