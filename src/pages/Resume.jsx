@@ -2,15 +2,23 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
+import Button from '@mui/material/Button';
 import React from 'react';
 
 export default function Resume() {
     return (
       <div>
         <h1>Resume</h1>
-        <p>
-            <a href="/images/Cameron_Bursch_Resume.pdf" download>Download Resume</a>
-        </p>
+        <div>
+        <Button 
+          variant="contained" 
+          href="/images/Cameron_Bursch_Resume.pdf" 
+          download
+          target="_blank" 
+          rel="noopener noreferrer">
+          Download
+        </Button>
+      </div>
         <h2>Proficiences</h2>
         <ul>
             <li>HTML/CSS</li>
