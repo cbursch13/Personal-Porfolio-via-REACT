@@ -4,35 +4,76 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import Button from '@mui/material/Button';
 import React from 'react';
+import HtmlIcon from '@mui/icons-material/Html';
+import CssIcon from '@mui/icons-material/Css';
+import JavascriptIcon from '@mui/icons-material/Javascript';
+import ApiIcon from '@mui/icons-material/Api';
+import Grid from '@mui/material/Grid';
+import '../../src/App.CSS';
+
+const ProficiencyItem = ({ icon, text }) => (
+  <div style={{ display: 'flex', alignItems: 'center' }}>
+    {icon}
+    <span style={{ marginLeft: '8px' }}>{text}</span>
+  </div>
+);
 
 export default function Resume() {
-    return (
+  const onButtonClick = () => {
+    const pdfUrl = "/images/Cameron_Bursch_Resume.pdf";
+    const link = document.createElement("a");
+    link.href = pdfUrl;
+    link.download = "Cameron_Bursch_Resume.pdf"; // specify the filename
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh' }}>
       <div>
-        <h1>Resume</h1>
-        <div>
-        <Button 
-          variant="contained" 
-          href="/images/Cameron_Bursch_Resume.pdf" 
-          download
-          target="_blank" 
-          rel="noopener noreferrer">
-          Download
+        <Button style={{width: '400px', marginBottom: '100px'}} variant="contained" onClick={onButtonClick}>
+          Download Resume
         </Button>
       </div>
-        <h2>Proficiences</h2>
-        <ul>
-            <li>HTML/CSS</li>
-            <li>JavaScript</li>
-            <li>APIs (Web, Server, 3rd Party)</li>
-            <li>Node.js & Express.js</li>
-            <li>OOP, ORM, MVC</li>
-            <li>SQL & NoSQL</li>
-            <li>MongoDB & GraphQL</li>
-            <li>PWA</li>
-            <li>REACT</li>
-            <li>MERN & State</li>
-
-        </ul>
+      <h2>Proficiencies</h2>
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <Grid container spacing={2}>
+          <Grid item xs={4}>
+            <ProficiencyItem icon={<HtmlIcon />} text="HTML" />
+          </Grid>
+          <Grid item xs={4}>
+            <ProficiencyItem icon={<CssIcon />} text="CSS" />
+          </Grid>
+          <Grid item xs={4}>
+            <ProficiencyItem icon={<JavascriptIcon />} text="JavaScript" />
+          </Grid>
+          <Grid item xs={4}>
+            <ProficiencyItem icon={<ApiIcon />} text="APIs" />
+          </Grid>
+          <Grid item xs={4}>
+            <ProficiencyItem text="Node.js & Express.js" />
+          </Grid>
+          <Grid item xs={4}>
+            <ProficiencyItem text="OOP, ORM, MVC" />
+          </Grid>
+          <Grid item xs={4}>
+            <ProficiencyItem text="SQL & NoSQL" />
+          </Grid>
+          <Grid item xs={4}>
+            <ProficiencyItem text="MongoDB & GraphQL" />
+          </Grid>
+          <Grid item xs={4}>
+            <ProficiencyItem text="PWA" />
+          </Grid>
+          <Grid item xs={4}>
+            <ProficiencyItem text="React" />
+          </Grid>
+          <Grid item xs={4}>
+            <ProficiencyItem text="MERN & Stat" />
+          </Grid>
+        </Grid>
       </div>
-    );
-  }
+    </div>
+  );
+}

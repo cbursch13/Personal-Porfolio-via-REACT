@@ -1,28 +1,8 @@
-// import github_icon from "../images/github_icon.png";
-// import linkedIn_icon from "../images/linkedin_icon.png";
-// import email_icon from "../images/email_icon.png";
-// import pdfIcon from "../images/PDF_icon.png";
-// import Resume from "../images/Cameron_Bursch_Resume.pdf";
-
-// export default function Contact(props) {
-//   return (
-//     <div className="moreLeft">
-//       <h1>Contact Me</h1>
-//     <p>Feel free to reach out! I look forward to connecting with you.</p>
-//    <p><img className="contactImg" src={ pdfIcon } alt="github icon" /><a className="contactLink" href={Resume}>Click here to download my resume</a></p>
-//     <img className="contactImg" src={ github_icon } alt="github icon" /><a className="contactLink" href="https://github.com/cbursch13" target="_blank" rel="noreferrer"> Github</a><br/>
-//     <img className="contactImg" src={ linkedIn_icon } alt="linkedIn icon" /><a className="contactLink" href="https://www.linkedin.com/in/cameron-bursch-a3028590/" target="_blank" rel="noreferrer"> LinkedIn</a><br/>
-//     <img className="contactImg" src={ email_icon } alt="email icon" /><a className="contactLink" href="mailto:cammichbursc@gmail.com">Email me</a>
-//     <p>&nbsp;</p>
-//     <p>&nbsp;</p>
-//     <p>&nbsp;</p>
-//     </div>
-//   );
-// }
-
 import React, { useState } from 'react';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 
-const ContactSection = () => {
+export default function Contact() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -48,42 +28,51 @@ const ContactSection = () => {
     }
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault(); // Prevent form submission
+    // Handle form submission logic here
+    console.log("Name:", name);
+    console.log("Email:", email);
+    console.log("Message:", message);
+  };
+
   return (
-    <div>
-      <h2>Contact Me</h2>
-      <form>
-        <div>
-          <label htmlFor="name">Name:</label>
-          <input
-            type="text"
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '80vh', marginTop: '20px' }}>
+      <div>
+        <h2>Contact Me</h2>
+        <form onSubmit={handleSubmit} style={{ display: 'grid', gap: '20px' }}>
+          <TextField
             id="name"
+            label="Name"
+            variant="outlined"
             value={name}
             onChange={handleNameChange}
+            error={!!nameError}
+            helperText={nameError}
           />
-          {nameError && <span>{nameError}</span>}
-        </div>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input
-            type="email"
+          <TextField
             id="email"
+            label="Email"
+            variant="outlined"
             value={email}
             onChange={handleEmailChange}
+            error={!!emailError}
+            helperText={emailError}
           />
-          {emailError && <span>{emailError}</span>}
-        </div>
-        <div>
-          <label htmlFor="message">Message:</label>
-          <textarea
+          <TextField
             id="message"
+            label="Message"
+            multiline
+            rows={4}
+            variant="outlined"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
-          ></textarea>
-        </div>
-        <button type="submit">Submit</button>
-      </form>
+          />
+          <Button type="submit" variant="contained" color="primary">
+            Submit
+          </Button>
+        </form>
+      </div>
     </div>
   );
 };
-
-export default ContactSection;

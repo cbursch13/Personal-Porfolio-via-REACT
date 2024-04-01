@@ -3,19 +3,21 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
-}
+  }
 
 .logo {
   height: 6em;
   padding: 1.5em;
-  will-change: filter;
+  will-change: filter, bold;
   transition: filter 300ms;
 }
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
+  font-weight: bold;
 }
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
+  font-weight: bold;
 }
 
 @keyframes logo-spin {
@@ -39,4 +41,21 @@
 
 .read-the-docs {
   color: #888;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  background-color:rgb(226, 220, 212);
+  padding: 3px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skills {
+  border-top-width: 20px;
+  
 }
