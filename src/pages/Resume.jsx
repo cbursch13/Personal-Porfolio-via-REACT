@@ -9,7 +9,6 @@ import CssIcon from '@mui/icons-material/Css';
 import JavascriptIcon from '@mui/icons-material/Javascript';
 import ApiIcon from '@mui/icons-material/Api';
 import Grid from '@mui/material/Grid';
-import '../../src/App.CSS';
 
 const ProficiencyItem = ({ icon, text }) => (
   <div style={{ display: 'flex', alignItems: 'center' }}>
