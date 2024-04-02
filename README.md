@@ -23,6 +23,11 @@
 
   ## Usage
   You can either fork the repository and follow the above steps or you can use the following link to see how to use the application.
+  https://main--aquamarine-haupia-03614f.netlify.app/
+  ![Screenshot](./public/images/aboutMe.png)
+  ![Screenshot](./public/images/Portfolio.png)
+  ![Screenshot](./public/images/ContactMe.png)
+  ![Screenshot](./public/images/Resume.png)
     
   ## How to Contribute
   [Contributor Covenant](https://www.contributor-covenant.org/)  
