@@ -34,6 +34,18 @@ export default function Contact() {
     console.log("Name:", name);
     console.log("Email:", email);
     console.log("Message:", message);
+   
+    // Show alert
+    alert("Thank you for your interest! I will get back to you shortly!");
+
+    // Clear form fields
+    setName('');
+    setEmail('');
+    setMessage('');
+
+    // Reload page
+    window.location.reload();
+
   };
 
   return (

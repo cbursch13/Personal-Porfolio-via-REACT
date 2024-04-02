@@ -36,43 +36,45 @@ export default function Resume() {
           Download Resume
         </Button>
       </div>
-      <h2>Proficiencies</h2>
-      <div style={{ display: 'flex', alignItems: 'center' }}>
-        <Grid container spacing={2}>
-          <Grid item xs={4}>
-            <ProficiencyItem icon={<HtmlIcon />} text="HTML" />
+      <div style={{textAlign: 'center'}}>
+        <h2>Proficiencies</h2>
+        <div style={{ paddingLeft: '200px', display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center' }}>
+          <Grid container spacing={2}>
+            <Grid item xs={4}>
+              <ProficiencyItem icon={<HtmlIcon />} text="HTML" />
+            </Grid>
+            <Grid item xs={4}>
+              <ProficiencyItem icon={<CssIcon />} text="CSS" />
+            </Grid>
+            <Grid item xs={4}>
+              <ProficiencyItem icon={<JavascriptIcon />} text="JavaScript" />
+            </Grid>
+            <Grid item xs={4}>
+              <ProficiencyItem icon={<ApiIcon />} text="APIs" />
+            </Grid>
+            <Grid item xs={4}>
+              <ProficiencyItem text="Node.js & Express.js" />
+            </Grid>
+            <Grid item xs={4}>
+              <ProficiencyItem text="OOP, ORM, MVC" />
+            </Grid>
+            <Grid item xs={4}>
+              <ProficiencyItem text="SQL & NoSQL" />
+            </Grid>
+            <Grid item xs={4}>
+              <ProficiencyItem text="MongoDB & GraphQL" />
+            </Grid>
+            <Grid item xs={4}>
+              <ProficiencyItem text="PWA" />
+            </Grid>
+            <Grid item xs={4}>
+              <ProficiencyItem text="React" />
+            </Grid>
+            <Grid item xs={4}>
+              <ProficiencyItem text="MERN & Stat" />
+            </Grid>
           </Grid>
-          <Grid item xs={4}>
-            <ProficiencyItem icon={<CssIcon />} text="CSS" />
-          </Grid>
-          <Grid item xs={4}>
-            <ProficiencyItem icon={<JavascriptIcon />} text="JavaScript" />
-          </Grid>
-          <Grid item xs={4}>
-            <ProficiencyItem icon={<ApiIcon />} text="APIs" />
-          </Grid>
-          <Grid item xs={4}>
-            <ProficiencyItem text="Node.js & Express.js" />
-          </Grid>
-          <Grid item xs={4}>
-            <ProficiencyItem text="OOP, ORM, MVC" />
-          </Grid>
-          <Grid item xs={4}>
-            <ProficiencyItem text="SQL & NoSQL" />
-          </Grid>
-          <Grid item xs={4}>
-            <ProficiencyItem text="MongoDB & GraphQL" />
-          </Grid>
-          <Grid item xs={4}>
-            <ProficiencyItem text="PWA" />
-          </Grid>
-          <Grid item xs={4}>
-            <ProficiencyItem text="React" />
-          </Grid>
-          <Grid item xs={4}>
-            <ProficiencyItem text="MERN & Stat" />
-          </Grid>
-        </Grid>
+        </div>
       </div>
     </div>
   );
